@@ -1,131 +1,119 @@
-users = [{
-    "user": "1",
-    "password": "1"
-}, {
-    "user": "AngelitoNormal",
-    "password": "1234"
-}]
-
-products = [
+cart = [
     {
-        "name": "Producto #1",
+        "name": "Manzana",
         "price": 1000,
         "stock": 10,
         "discount": 10,
     },
     {
-        "name": "Producto #2",
+        "name": "Pera",
         "price": 1000,
         "stock": 10,
         "discount": 10,
     },
     {
-        "name": "Producto #3",
+        "name": "Fresa",
         "price": 1000,
         "stock": 10,
         "discount": 10,
     }
-] 
+]
 
-menu_admin = """
+menu = """
+(1) Ver carrito
 
-(1) Agregar producto
+(2) Agregar al carrito
 
-(2) Modificar producto
+(3) Eliminar del carrito
 
-(3) Eliminar producto
+(4) Realizar compra
 
-"""
+Seleccione una opcion: """
 
-menu_usuario = """
+exit_aplication = 2
 
-(1) Comprar producto
-
-"""
-
-while True : 
+while exit_aplication == 2:
+    
     print("¡Bienvenido a su Ecommerce favorito!")
-    user = input("Usuario: ")
-    password = input("Contraseña: ")
-    
+
     option = 0
-
-    if (user == users[0]['user'] and password == users[0]['password']): 
-        option = int(input(menu_admin))
-
-        if (option == 1): 
-            print("Crear nuevo producto.\n")
-
-            name = input("Nombre del producto: ")
-            price = input("Precio del producto: ")
-            stock = input("Cantidad de products: ")
-            discount = input("Descuento (Porcentaje): ")
-            
-            new_product = {
-                "name": name,
-                "price": price,
-                "stock": stock,
-                "discount": discount
-            }
-
-            products.append(new_product)
-
-            print("¡Producto agregado con exito!: " + str(new_product))
-
-        elif (option == 2):
-            exit = 2 
-
-            print("Modificar producto.")
-
-            while exit == 2:
-
-                search = input("Nombre del producto: ")
-
-                for product in products:
-                    if (search == product["name"]):
-                        print("Producto encontrado.")
-
-                        print(f"""
-                            (1) Nombre: {product["name"]}
-                            (2) Precio: {product["price"]}
-                            (3) Cantidad: {product["stock"]}
-                            (4) Descuento: {product["discount"]}%
-                            """)
-                        
-                        objective = input("Digite lo que quiera cambiar: ")
-
-                        if (objective == 1):
-                            product["name"] = input("Nuevo nombre: ")
-                        elif (objective == 2):
-                            product["price"] = input("Nuevo precio: ")
-                        elif (objective == 3):
-                            product["stock"] = input("Nueva cantidad: ")
-                        elif (objective == 4):
-                            product["discount"] = input("Nuevo descuento: ")
-                        else: 
-                            print('Opcion no valida')
-
-                        exit = input("¿Desea salir? (1) Si / (2) No")
-                else: 
-                    exit = input("Producto no encontrado. ¿Desea salir? (1) Si / (2) No")
-
-        elif (option == 3):
-            print("Eliminar producto.")
-            
-            exit = 2
-
-            while exit == 2:
-
-                search = input("Nombre del producto: ")
-
-                for index, product in enumerate(products):
-                    if (search == product["name"]):
-                        products.remove(product)
-
-                exit = input("Producto eliminado con exito. ¿Desea salir? (1) Si / (2) No")    
-
-        else:
-            print("Opcion no valida. ¿Desea salir? (1) Si / (2) No")
-
     
-    break
+    option = int(input(menu))
+
+    if (option == 1):
+        print("\nMostrando productos en el carrito\n")
+
+        total = 0 
+        discount = 0
+
+        for index, product in enumerate(cart): 
+            print(f"Producto #{index + 1}.")
+            print(f"Nombre: {product['name']}")
+            print(f"Precio: {product['price']}")
+            print(f"Cantidad: {product['stock']}")
+            print(f"Descuento: {product['discount']}\n")
+
+            discount = product["price"] * product["discount"]/100
+            total += product["price"] - discount
+
+        print(f"Total carrito: {total}")
+
+    elif (option == 2):
+        print("\nAgregar nuevo producto.\n")
+
+        name = input("Nombre del producto: ")
+        price = input("Precio del producto: ")
+        stock = input("Cantidad de products: ")
+        discount = input("Descuento (Solo numero): ")
+
+        new_product = {
+            "name": name,
+            "price": price,
+            "stock": stock,
+            "discount": discount
+        }
+
+        cart.append(new_product)
+
+        print("¡Producto agregado con exito!: " + str(new_product))
+
+    elif (option == 3):
+        print("\nEliminar producto.\n")
+
+        exit = 2
+
+        while exit == 2:
+
+            search = input("Nombre del producto: ")
+
+            for product in (cart):
+                if (search == product["name"]):
+                    cart.remove(product)
+
+            exit = int(input(
+                "Producto eliminado con exito. ¿Desea salir? (1) Si / (2) No. "))
+    elif (option == 4): 
+        print("\nComprar carrito.\n")
+
+        total = 0 
+        discount = 0
+
+        for product in cart:
+            discount = price * product["discount"]/100
+            total += product["price"] - discount
+
+        confirm = int(input(f"¿Estas seguro de hacer esta compra por el total de ${total}? (1) Si / (2) No.\n"))
+
+        if (confirm == 1):
+            print("¡Compra realizada con exito!")
+        elif (confirm == 2):
+            continue
+        else:
+            print("Opcion no valida.")
+            continue
+
+    else:
+        exit_aplication = int(input("Opcion no valida. ¿Desea salir? (1) Si / (2) No. "))
+    
+
+        
