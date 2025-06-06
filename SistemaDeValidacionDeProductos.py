@@ -26,17 +26,50 @@ cart = [
     }
 ]
 
-#Menu en una varibale para no repetir codigo
-menu = """
-(1) Ver carrito
+chars = [" ", "⎢", "⎥", "∙", "⎯"]
 
-(2) Agregar al carrito
+def menu (msj: str):
+    separed = msj.splitlines()
 
-(3) Eliminar del carrito
+    size = 160
+    
+    menu = f"{chars[3]}{chars[4]*(size-2)}{chars[3]}"
 
-(4) Realizar compra
+    for line in separed:
+        menu+="\n"
 
-Seleccione una opcion: """
+        posicion = 50 if len(line) > 50 else 55
+
+        total = (len(line)+1)/2
+
+        #print (f"Caracteres: {len(line)}")
+        #print (f"Caracteres + 1: {len(msj)+1}")
+        #print (f"Total dividido: {total}")
+
+        total = round(total)
+        lado1 = int(round(size/2))
+        lado2 = int(round(size/2))
+
+        #print (f"Total redondeado: {total}")
+        #print(f"Residuo: {len(msj) % 2}")
+
+        if not (len(line) - 2) % 4 == 0:
+            lado2 -= 2
+
+        if len(line) % 2 == 1: 
+            line += " "
+
+        #print(f"Lado #1: {lado1-(total)}")
+        #print (f"Caracteres en el msj: {total*2}")
+        #print(f"Lado #2: {lado2-total}")
+
+        centro = lado1-posicion
+        
+        menu += f"{chars[1]}{chars[0]*((lado1)-centro)}{line}{chars[0]*((lado2-total*2)+centro)}{chars[2]}"
+
+    menu += f"\n{chars[3]}{chars[4]*(size-2)}{chars[3]}"
+
+    return menu
 
 #El usuario podrá salir de la aplicacion si esta variable es igual a 1
 exit_aplication = 2
@@ -49,13 +82,16 @@ while exit_aplication != 1:
             print("Opcion no valida. Cerrando el programa...")
             break
 
-
-        print("\n¡Bienvenido a su Ecommerce favorito!")
-
         #Variable de opcion para el menu
         option = 0
         
-        option = int(input(menu))
+        mensaje = """Bienvenido a su Ecommerce favorito. Elija una opcion.
+        (1) Mostrar carrito.
+        (2) Agregar productos.
+        (3) Eliminar productos.
+        (4) Comprar carrito."""
+
+        option = int(input(f"{menu(mensaje)}\nUsuario -> "))
 
         #Pequeño bloque para ver los productos en el carrito
         if (option == 1):
@@ -168,5 +204,3 @@ while exit_aplication != 1:
         except:
             print("Respuesta no valida. Cerrando la aplicacion...")
             break
-            
-    
