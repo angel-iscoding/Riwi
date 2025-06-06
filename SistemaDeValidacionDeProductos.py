@@ -1,3 +1,4 @@
+import os
 ### ACLARACION
 #Aquí cumplo los requisitos del entregable pero le quise dar
 #un toque más de "complejidad" haciendolo un pequeño programa
@@ -27,18 +28,22 @@ cart = [
 ]
 
 chars = [" ", "⎢", "⎥", "∙", "⎯"]
+user = "Usuario -> "
+
+def clear(): 
+    os.system("clear")
 
 def menu (msj: str):
     separed = msj.splitlines()
 
-    size = 160
+    size = 70
     
     menu = f"{chars[3]}{chars[4]*(size-2)}{chars[3]}"
 
     for line in separed:
         menu+="\n"
 
-        posicion = 50 if len(line) > 50 else 55
+        posicion = 7 if len(line) > 50 else 14
 
         total = (len(line)+1)/2
 
@@ -76,6 +81,7 @@ exit_aplication = 2
 
 #Buble While para que la aplicacion no se cierre
 while exit_aplication != 1:
+    clear()
     #Bloque Try para cualquier error
     try:
         if (exit_aplication != 1 and exit_aplication != 2):
@@ -91,11 +97,14 @@ while exit_aplication != 1:
         (3) Eliminar productos.
         (4) Comprar carrito."""
 
-        option = int(input(f"{menu(mensaje)}\nUsuario -> "))
+        option = int(input(f"{menu(mensaje)}\n{user}"))
 
         #Pequeño bloque para ver los productos en el carrito
         if (option == 1):
+            clear()
             print("\nMostrando productos en el carrito\n")
+
+            msj_product = ""
 
             #Se inician variables que almacenan el valor total del carrito
             total = 0 
@@ -103,28 +112,34 @@ while exit_aplication != 1:
 
             #Bloque for para pasar por cada elemento y un buen formato a la lista mostrada
             for index, product in enumerate(cart): 
-                for i in range(1, product["stock"]):        
-                    print(f"Producto #{index + 1}.")
-                    print(f"Nombre: {product['name']}")
-                    print(f"Precio: {product['price']}")
-                    print(f"Cantidad: {product['stock']}")
-                    print(f"Descuento: {product['discount']}\n")
 
-                    discount = product["price"] * product["discount"]/100
-                    total += product["price"] - discount
+                msj_product = f"""Producto #{index + 1}
+                Nombre: {product['name']}
+                Precio: {product['price']}
+                Cantidad: {product['stock']}
+                Descuento: {product['discount']}"""
 
-            print(f"Total carrito: {total}")
+                index+=1
+                discount = product["price"] * product["discount"]/100
+                total += product["price"] - discount
+
+                print(menu(msj_product))
+
+            print(f"\nTotal carrito: {total}\n")
+
+            input()
     
         #Agregar productos al carrito
         elif (option == 2):
+            clear()
             print("\nAgregar nuevo producto.\n")
 
             #Se hace los requisitos de la actividad
             #pidiendo los datos que después se guardan en el carrito
             name = input("Nombre del producto: ")
-            price = input("Precio del producto: ")
-            stock = input("Cantidad de productos: ")
-            discount = input("Descuento (Solo numero): ")
+            price = int(input("Precio del producto: "))
+            stock = int(input("Cantidad de productos: "))
+            discount = int(input("Descuento (Solo numero): "))
 
             #Sería un problema que el usuario coloque un numero negativo 
             #Y ese numero negativo se reste al total
@@ -148,15 +163,20 @@ while exit_aplication != 1:
             #Se agrega a las lista "cart"
             cart.append(new_product)
 
+            clear()
+
             print("¡Producto agregado con exito!: " + str(new_product))
 
+            input()
+
         elif (option == 3):
+            clear()
             print("\nEliminar producto.\n")
 
-            exit = 2
+            exit = 1
 
             #While para poder eliminar varios productos del carrito
-            while exit == 2:
+            while exit == 1:
 
                 search = input("Nombre del producto: ")
 
@@ -164,11 +184,12 @@ while exit_aplication != 1:
                 for product in (cart):
                     if (search == product["name"]):
                         cart.remove(product)
-
+                
                 exit = int(input(
-                    "Producto eliminado con exito. ¿Desea salir? (1) Si / (2) No. "))
+                    f"Producto eliminado con exito. ¿Desea eliminar mas? (1) Si / (2) No.\n{user}"))
                 
         elif (option == 4): 
+            clear()
             print("\nComprar carrito.\n")
 
             #Se inician variables que almacenan el valor total del carrito
@@ -178,28 +199,32 @@ while exit_aplication != 1:
             #Se recoge el precio de los productos y se les resta el descuento
             #para luego sumarlo al valor total
             for product in cart:
-                discount = product["price"] * product["discount"]/100
-                total += product["price"] - discount
+                for i in range(1, product["stock"]): 
+                    discount = product["price"] * product["discount"]/100
+                    total += product["price"] - discount
 
-            confirm = int(input(f"¿Estas seguro de hacer esta compra por el total de ${total}? (1) Si / (2) No.\n"))
+            confirm = int(input(f"¿Estas seguro de hacer esta compra por el total de ${total}? (1) Si / (2) No.\n{user}"))
 
             #¡Compra confirmada con exito!
             if (confirm == 1):
                 print("¡Compra realizada con exito!")
+                input()
                 #Se reinicia el carrito 
                 cart = []
             else:
                 print("Opcion no valida.")
 
         else:
+            clear()
             #En caso de que el se digite una opcion no valida en el menu
-            exit_aplication = int(input("Opcion no valida. ¿Desea salir? (1) Si / (2) No. "))
+            exit_aplication = int(input(f"Opcion no valida. ¿Desea salir? (1) Si / (2) No.\n{user}"))
     
     #Except para que en cualquier error el usuario pueda volver a ejecutar
     #Sin necesidad de reiniciar el programa
     except:
         try:
-            exit_aplication = int(input("Ha ocurrido un error durante la ejecucion.\n¿Desea salir de aplicacion? (1) Si / (2) No. "))
+            clear()
+            exit_aplication = int(input(f"{menu("Ha ocurrido un error durante la ejecucion.\n¿Desea salir de aplicacion? (1) Si / (2) No.")}\n{user}"))
             
         except:
             print("Respuesta no valida. Cerrando la aplicacion...")
