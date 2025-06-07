@@ -109,7 +109,8 @@ while exit_aplication != 1:
         (1) Mostrar carrito.
         (2) Agregar productos.
         (3) Eliminar productos.
-        (4) Comprar carrito."""
+        (4) Comprar carrito.
+        (5) Salir."""
 
         option = int(input(f"{menu(mensaje)}\n{user}"))
 
@@ -212,10 +213,9 @@ while exit_aplication != 1:
                 clear()
                 
                 if eliminado:
-                    exit = int(input(f"{menu(f"Producto eliminado con exito. ¿Desea eliminar mas? (1) Si / (2) No.\n")}\n{user}c"))
+                    exit = int(input(f"{menu(f"Producto eliminado con exito. ¿Desea eliminar mas? (1) Si / (2) No.\n")}\n{user}"))
                 else:
-                    print(menu("Producto no encontrado."))
-                    input()
+                    exit = int(input(f"{menu(f"Producto no encontrado. ¿Desea eliminar mas? (1) Si / (2) No.\n")}\n{user}"))
         elif (option == 4): 
             clear()
 
@@ -244,6 +244,12 @@ while exit_aplication != 1:
             else:
                 print(menu("Opcion no valida."))
                 input()
+
+        elif (option == 5):
+            clear()
+            print(menu("Gracias por usar nuestro programa."))
+            input()
+            exit_aplication = 1
 
         else:
             clear()
