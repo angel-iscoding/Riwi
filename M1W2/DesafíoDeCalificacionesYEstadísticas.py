@@ -1,11 +1,18 @@
+import os
+
+def clear(): 
+    os.system("clear")
+
 def menu (msj: str):
     chars = [" ", "⎢", "⎥", "∙", "⎯"]
     
     #Separa el mensaje dentro de una lista
     separed = msj.splitlines()
+
+    print(separed)
     
     #Tamaño del menu
-    size = 110
+    size = 170
     
     #Head del menu
     menu = f"{chars[3]}{chars[4]*(size-2)}{chars[3]}"
@@ -15,7 +22,7 @@ def menu (msj: str):
         menu+="\n"
 
         #Posicion inicial de los caracteres
-        posicion = int(round(size*0.15)) if len(line) > 60 else int(round(size*0.30))
+        posicion = int(round(size*0.27)) if len(line) > 50 else int(round(size*0.40))
 
         #Total de caracteres
         total = (len(line)+1)/2
@@ -54,7 +61,7 @@ def menu (msj: str):
 
     return menu
 
-menu_inicial = """Bienvenido al sistema de calificaciones de la institucion. Elija una opcion\n
+startmenu = """Bienvenido al sistema de calificaciones de la institucion. Elija una opcion\n
 (1) Verificar estado de evaluacion\n
 (2) Calcular promedio de notas\n
 (3) Estudiantes aprovados\n
@@ -63,21 +70,67 @@ menu_inicial = """Bienvenido al sistema de calificaciones de la institucion. Eli
 
 user_in = "Usuario -> "
 
-salir = False
+exit = False
 
-estudiantes = []
+students = [6,6,6]
 
 #Empieza el programa
 
-while salir != False:
+while exit == False:
 
-    option = input(f"{menu(menu_inicial)}\n{user_in}")
+    try:
+        option = int(input(f"{menu(startmenu)}\n{user_in}"))
 
-    if option == 1:
-        print(option)
-    elif option == 2:
-        print(option)
-    elif option == 3:
-        print(option)
-    elif option == 4:
-        print(option)
+        if option == 1:
+            calificacion = 20
+            
+            while not calificacion <= 10 and calificacion >= 0: 
+                calificacion = float(input(f"{menu("Ingrese una calificacion valida entre 0.0 y 10.0")}\n{user_in}"))
+
+            students.append(calificacion)
+
+            print(f"{menu(f"Calificacion ingresada: {students[-1]}")}")
+
+            input()
+
+        elif option == 2:
+            total = 0.0
+
+            for num in students:
+                total += num
+
+            print(menu(f"Promedio de notas: {total}"))
+
+            input()
+
+        elif option == 3:
+            aprovados = 0
+
+            for num in students:
+                if num >= 6.0:
+                    aproved+=1
+
+            print(menu(f"Estudiantes aprovados: {aprovados}"))
+
+            input()
+
+        elif option == 4:
+            search = float(input(f"{menu("Calificacion a buscar.")}\n{user_in}"))
+
+            if search in students:
+                print(menu(f"¡Elemento encontrado!"))
+            else:
+                print(menu(f"El elemento no fue encontrado."))
+
+            input()    
+
+    except:
+        try:
+            if not int(input(f"{menu(f"Ha digitado un valor incorrecto, ¿desea salir del programa? \n(1) Para salir. (2) Para quedarse.")}\n{user_in}")) == 1:
+                exit == True
+        except:
+            print(menu("Ha digitado un valor incorrecto... Saliendo del programa."))
+            exit = True
+    finally:
+        print(menu("Saliendo del programa..."))    
+    
