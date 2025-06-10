@@ -24,41 +24,25 @@ def menu (msj: str):
 
         posicion = 0
 
-        print(porcentaje)
-
-        if porcentaje*100 >= 0 and porcentaje*100 <= 10:
-            print(f"Es un porcentaje de: {porcentaje}. Es decir: {porcentaje*100}%")
-            posicion = int(round(size*0.41))
+        if porcentaje*100 >= 0 and porcentaje*100 <= 15:
+            posicion = int(round(size*0.43))
         
-        if porcentaje*100 > 10 and porcentaje*100 <= 20:
-            print(f"Es un porcentaje de: {porcentaje}. Es decir: {porcentaje*100}%")
-            posicion = int(round(size*0.38))
+        if porcentaje*100 > 15 and porcentaje*100 <= 30:
+            posicion = int(round(size*0.37))
         
-        if porcentaje*100 > 30 and porcentaje*100 <= 40:
-            print(f"Es un porcentaje de: {porcentaje}. Es decir: {porcentaje*100}%")
-            posicion = int(round(size*0.50))
-        
-        if porcentaje*100 > 40 and porcentaje*100 <= 50:
-            print(f"Es un porcentaje de: {porcentaje}. Es decir: {porcentaje*100}%")
-            posicion = int(round(size*0.40))
-        
-        if porcentaje*100 > 50 and porcentaje*100 <= 60:
-            print(f"Es un porcentaje de: {porcentaje}. Es decir: {porcentaje*100}%")
-            posicion = int(round(size*0.30))
-        
-        if porcentaje*100 > 60 and porcentaje*100 <= 70:
-            print(f"Es un porcentaje de: {porcentaje}. Es decir: {porcentaje*100}%")
+        if porcentaje*100 > 30 and porcentaje*100 <= 50:
             posicion = int(round(size*0.20))
         
-        if porcentaje*100 > 80 and porcentaje*100 <= 90:
-            print(f"Es un porcentaje de: {porcentaje}. Es decir: {porcentaje*100}%")
-            posicion = int(round(size*0.10))
-        
-        if porcentaje*100 > 90 and porcentaje*100 <= 100:
-            print(f"Es un porcentaje de: {porcentaje}. Es decir: {porcentaje*100}%")
-            posicion = int(round(size*0.00))
+        if porcentaje*100 > 50 and porcentaje*100 <= 65:
+            posicion = int(round(size*0.15))
 
-      
+        if porcentaje*100 > 65 and porcentaje*100 <= 80:
+            posicion = int(round(size*0.1))
+        
+        if porcentaje*100 > 80 and porcentaje*100 <= 100:
+            posicion = int(round(size*0.03))
+
+        print(f"La posicion es: {posicion}")
 
         #Total de caracteres
         total = (caracteres+1)/2
@@ -104,8 +88,8 @@ mensaje = """Bienvenido a su Ecommerce favorito. Elija una opcion\n
 (4) Comprar carrito\n
 """
 
-prueba = "123456789123456789"
-new = menu(prueba)
+prueba = "12345"
+new = menu(mensaje)
 
 print(new)
 

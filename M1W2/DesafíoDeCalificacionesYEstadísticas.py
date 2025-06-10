@@ -8,12 +8,10 @@ def menu (msj: str):
     
     #Separa el mensaje dentro de una lista
     separed = msj.splitlines()
-
-    print(separed)
     
     #Tamaño del menu
-    size = 170
-    
+    size = 100
+
     #Head del menu
     menu = f"{chars[3]}{chars[4]*(size-2)}{chars[3]}"
 
@@ -21,11 +19,34 @@ def menu (msj: str):
     for line in separed:
         menu+="\n"
 
-        #Posicion inicial de los caracteres
-        posicion = int(round(size*0.27)) if len(line) > 50 else int(round(size*0.40))
+        caracteres = len(line)
+
+        porcentaje = caracteres / size
+
+        posicion = 0
+
+        #Condicion que depende de los caracteres, se centra solo
+
+        if porcentaje*100 >= 0 and porcentaje*100 <= 15:
+            posicion = int(round(size*0.43))
+        
+        if porcentaje*100 > 15 and porcentaje*100 <= 30:
+            posicion = int(round(size*0.34))
+        
+        if porcentaje*100 > 30 and porcentaje*100 <= 50:
+            posicion = int(round(size*0.27))
+        
+        if porcentaje*100 > 50 and porcentaje*100 <= 65:
+            posicion = int(round(size*0.18))
+
+        if porcentaje*100 > 65 and porcentaje*100 <= 80:
+            posicion = int(round(size*0.14))
+        
+        if porcentaje*100 > 80 and porcentaje*100 <= 100:
+            posicion = int(round(size*0.03))
 
         #Total de caracteres
-        total = (len(line)+1)/2
+        total = (caracteres+1)/2
 
         #print (f"Caracteres: {len(line)}")
         #print (f"Caracteres + 1: {len(msj)+1}")
@@ -40,11 +61,11 @@ def menu (msj: str):
         #print(f"Residuo: {len(msj) % 2}")
 
         #Condicion para que el menu se vea bien
-        if not (len(line) - 2) % 4 == 0:
+        if not (caracteres - 2) % 4 == 0:
             lado2 -= 2
 
         #Condicion para que el menu se vea bien
-        if len(line) % 2 == 1: 
+        if caracteres % 2 == 1: 
             line += " "
 
         #print(f"Lado #1: {lado1-(total)}")
@@ -62,7 +83,7 @@ def menu (msj: str):
     return menu
 
 startmenu = """Bienvenido al sistema de calificaciones de la institucion. Elija una opcion\n
-(1) Verificar estado de evaluacion\n
+(1) Verificar evaluacion\n
 (2) Calcular promedio de notas\n
 (3) Estudiantes aprovados\n
 (4) Buscar calificacion\n
@@ -126,7 +147,7 @@ while exit == False:
 
     except:
         try:
-            if not int(input(f"{menu(f"Ha digitado un valor incorrecto, ¿desea salir del programa? \n(1) Para salir. (2) Para quedarse.")}\n{user_in}")) == 1:
+            if not int(input(f"{menu(f"Ha digitado un valor incorrecto, ¿desea salir del programa?\n(1) Para salir. (2) Para quedarse.")}\n{user_in}")) == 1:
                 exit == True
         except:
             print(menu("Ha digitado un valor incorrecto... Saliendo del programa."))
