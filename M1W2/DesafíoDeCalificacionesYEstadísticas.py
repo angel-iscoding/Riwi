@@ -4,6 +4,8 @@ def clear():
     os.system("clear")
 
 def menu (msj: str):
+    clear()
+
     chars = [" ", "⎢", "⎥", "∙", "⎯"]
     
     #Separa el mensaje dentro de una lista
@@ -25,7 +27,7 @@ def menu (msj: str):
 
         posicion = 0
 
-        #Condicion que depende de los caracteres, se centra solo
+        #Condicion que depende de los caracteres, se asigna una posicion.
 
         if porcentaje*100 >= 0 and porcentaje*100 <= 15:
             posicion = int(round(size*0.43))
@@ -102,41 +104,56 @@ while exit == False:
     try:
         option = int(input(f"{menu(startmenu)}\n{user_in}"))
 
+        print(option)
+
         if option == 1:
+
             calificacion = 20
             
             while not calificacion <= 10 and calificacion >= 0: 
+                
                 calificacion = float(input(f"{menu("Ingrese una calificacion valida entre 0.0 y 10.0")}\n{user_in}"))
 
             students.append(calificacion)
+
+            
 
             print(f"{menu(f"Calificacion ingresada: {students[-1]}")}")
 
             input()
 
         elif option == 2:
+            
+
             total = 0.0
 
             for num in students:
                 total += num
+            
+            
 
             print(menu(f"Promedio de notas: {total}"))
 
             input()
 
         elif option == 3:
-            aprovados = 0
+
+            aproved = 0
 
             for num in students:
                 if num >= 6.0:
                     aproved+=1
 
-            print(menu(f"Estudiantes aprovados: {aprovados}"))
+            print(menu(f"Estudiantes aprovados: {aproved}"))
 
             input()
 
         elif option == 4:
+            
+
             search = float(input(f"{menu("Calificacion a buscar.")}\n{user_in}"))
+
+            
 
             if search in students:
                 print(menu(f"¡Elemento encontrado!"))
@@ -147,11 +164,16 @@ while exit == False:
 
     except:
         try:
-            if not int(input(f"{menu(f"Ha digitado un valor incorrecto, ¿desea salir del programa?\n(1) Para salir. (2) Para quedarse.")}\n{user_in}")) == 1:
+            
+
+            if int(input(f"{menu(f"Ha ocurrido un error, ¿desea salir del programa?\n(1) Para salir. (2) Para quedarse.")}\n{user_in}")) == 1:
                 exit == True
         except:
-            print(menu("Ha digitado un valor incorrecto... Saliendo del programa."))
+            print(menu("Ha digitado un valor incorrecto... El programa se cerrara automaticamente"))
             exit = True
-    finally:
-        print(menu("Saliendo del programa..."))    
+
+print(menu("¡Muchas gracias por usar nuestro servicio!"))  
+
+input()
     
+clear()
