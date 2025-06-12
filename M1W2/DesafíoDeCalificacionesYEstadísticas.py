@@ -95,10 +95,14 @@ user_in = "Usuario -> "
 
 exit = False
 
-students = [6,6,6]
+calificacion = input(f"{menu("Ingrese las calificaciones separadas por comas")}\n{user_in}")
+
+print(f"{menu(f"Calificaciones ingresadas: {calificacion}")}")
+
+calificacion = calificacion.split(',')
+
 
 #Empieza el programa
-
 while exit == False:
 
     try:
@@ -108,17 +112,7 @@ while exit == False:
 
         if option == 1:
 
-            calificacion = 20
             
-            while not calificacion <= 10 and calificacion >= 0: 
-                
-                calificacion = float(input(f"{menu("Ingrese una calificacion valida entre 0.0 y 10.0")}\n{user_in}"))
-
-            students.append(calificacion)
-
-            
-
-            print(f"{menu(f"Calificacion ingresada: {students[-1]}")}")
 
             input()
 
@@ -127,7 +121,7 @@ while exit == False:
 
             total = 0.0
 
-            for num in students:
+            for num in calificacion:
                 total += num
             
             
@@ -140,7 +134,7 @@ while exit == False:
 
             aproved = 0
 
-            for num in students:
+            for num in calificacion:
                 if num >= 6.0:
                     aproved+=1
 
@@ -155,7 +149,7 @@ while exit == False:
 
             
 
-            if search in students:
+            if search in calificacion:
                 print(menu(f"¡Elemento encontrado!"))
             else:
                 print(menu(f"El elemento no fue encontrado."))
