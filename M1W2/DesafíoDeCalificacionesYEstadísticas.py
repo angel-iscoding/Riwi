@@ -32,11 +32,11 @@ def menu (msj: str):
         if porcentaje*100 >= 0 and porcentaje*100 <= 15:
             posicion = int(round(size*0.43))
         
-        if porcentaje*100 > 15 and porcentaje*100 <= 30:
+        if porcentaje*100 > 15 and porcentaje*100 <= 40:
             posicion = int(round(size*0.34))
         
-        if porcentaje*100 > 30 and porcentaje*100 <= 50:
-            posicion = int(round(size*0.27))
+        if porcentaje*100 > 40 and porcentaje*100 <= 50:
+            posicion = int(round(size*0.22))
         
         if porcentaje*100 > 50 and porcentaje*100 <= 65:
             posicion = int(round(size*0.18))
@@ -87,79 +87,86 @@ def menu (msj: str):
 startmenu = """Bienvenido al sistema de calificaciones de la institucion. Elija una opcion\n
 (1) Verificar evaluacion\n
 (2) Calcular promedio de notas\n
-(3) Estudiantes aprovados\n
-(4) Buscar calificacion\n
+(3) Buscar calificaciones superiores\n
+(4) Buscar calificaciones especificas\n
 """
 
 user_in = "Usuario -> "
 
 exit = False
 
-calificacion = input(f"{menu("Ingrese las calificaciones separadas por comas")}\n{user_in}")
+calificaciones = input(f"{menu("Ingrese una o varias calificaciones separadas por comas\nSOLO son validas calificaciones entre 0 y 100")}\n{user_in}")
 
-print(f"{menu(f"Calificaciones ingresadas: {calificacion}")}")
+print(f"{menu(f"Calificaciones ingresadas: {calificaciones}")}")
 
-calificacion = calificacion.split(',')
+calificaciones = calificaciones.split(',')
 
+calificaciones = [int(x) for x in calificaciones]
+
+calificaciones_validas = [x for x in calificaciones if 0 <= x <= 100]
+
+input()
 
 #Empieza el programa
 while exit == False:
-
     try:
         option = int(input(f"{menu(startmenu)}\n{user_in}"))
 
         print(option)
 
         if option == 1:
-
-            
-
-            input()
+            for index, calificacion in enumerate(calificaciones):
+                if calificacion >= 60:
+                    print(menu(f"El estudiante #{index+1} con la calificacion {calificacion} aprobó"))
+                else:
+                    print(menu(f"El estudiante #{index+1} con la calificacion {calificacion} reprobó"))
+                
+                input()
 
         elif option == 2:
-            
 
             total = 0.0
 
-            for num in calificacion:
+            for num in calificaciones:
                 total += num
             
-            
-
-            print(menu(f"Promedio de notas: {total}"))
+            print(menu(f"Promedio de notas: {total/len(calificaciones)}"))
 
             input()
 
         elif option == 3:
-
+            search = int(input(f"{menu("Ingrese un valor para comprobar cuantas calificaciones son mayores al valor")}\n{user_in}"))
+            
             aproved = 0
 
-            for num in calificacion:
-                if num >= 6.0:
-                    aproved+=1
+            for calificacion in calificaciones_validas:
+                if not calificacion > search:
+                    continue
+                aproved+=1
+                
+            print(menu(f"Calificaciones que superan el valor: {aproved}"))
 
-            print(menu(f"Estudiantes aprovados: {aproved}"))
 
-            input()
+            input() 
 
         elif option == 4:
-            
 
-            search = float(input(f"{menu("Calificacion a buscar.")}\n{user_in}"))
+            search = int(input(f"{menu("Ingrese un valor para comprobar cuantas calificaciones tienen ese valor")}\n{user_in}"))
 
-            
+            aproved = 0
+            index = 0
 
-            if search in calificacion:
-                print(menu(f"¡Elemento encontrado!"))
-            else:
-                print(menu(f"El elemento no fue encontrado."))
+            while index < len(calificaciones_validas):
+                if calificaciones_validas[index] >= search:
+                    aproved+=1
+                index+=1
 
-            input()    
+            print(menu(f"Calificaciones que superan el valor: {aproved}"))
+
+            input()             
 
     except:
         try:
-            
-
             if int(input(f"{menu(f"Ha ocurrido un error, ¿desea salir del programa?\n(1) Para salir. (2) Para quedarse.")}\n{user_in}")) == 1:
                 exit == True
         except:
