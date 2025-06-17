@@ -1,4 +1,4 @@
-chars = [".", "⎢", "⎥", "∙", "⎯"]
+
 
 def menu (msj: str):
     chars = [" ", "⎢", "⎥", "∙", "⎯"]
@@ -81,6 +81,40 @@ def menu (msj: str):
 
     return menu
 
+def menu2 (msj: str):
+    # Constantes
+    size = 100
+    border_char = "∙"
+    fill_char = "⎯"
+    line_char = " "
+    side_char_l = "⎢"
+    side_char_r = "⎥"
+    
+    # Construir encabezado del menú
+    menu = f"{border_char}{fill_char * (size - 2)}{border_char}"
+    
+    # Procesar cada línea del mensaje
+    for line in msj.splitlines():
+        line_length = len(line)
+        # Ajustar línea si es impar
+        if line_length % 2 == 1:
+            line += " "
+            
+        line_length = len(line)
+        
+        # Calcular el padding izquierdo y derecho
+        total_padding = size - 2 - line_length
+        padding = total_padding // 2
+        
+        # Agregar línea al menú
+        menu += f"\n{side_char_l}{line_char * padding}{line}{line_char * padding}{side_char_r}"
+    
+    # Construir pie del menú
+    menu += f"\n{border_char}{fill_char * (size - 2)}{border_char}"
+    
+    return menu
+
+
 mensaje = """Bienvenido a su Ecommerce favorito. Elija una opcion\n
 (1) Mostrar carrito\n
 (2) Agregar productos\n
@@ -89,7 +123,7 @@ mensaje = """Bienvenido a su Ecommerce favorito. Elija una opcion\n
 """
 
 prueba = "12345"
-new = menu(mensaje)
+new = menu2(prueba)
 
 print(new)
 
