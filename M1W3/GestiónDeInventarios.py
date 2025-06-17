@@ -102,8 +102,8 @@ Funciones de utilidad para el manejo de interfaz para el usuario.
 def clear(): 
     os.system("clear")
 
-def IU (msj: str):
-    # Constantes
+def IU (msj: str) -> str:
+    # Variables constantes en la elaboración del menú
     size = 100
     border_char = "∙"
     fill_char = "⎯"
@@ -114,16 +114,17 @@ def IU (msj: str):
     # Construir encabezado del menú
     message = f"{border_char}{fill_char * (size - 2)}{border_char}"
     
-    # Procesar cada línea del mensaje
+    # Procesa cada línea del mensaje
     for line in msj.splitlines():
-        line_length = len(line)
+        line_length = len(line) 
+
         # Ajustar línea si es impar
         if line_length % 2 == 1:
             line += " "
             
         line_length = len(line)
         
-        # Calcular el padding izquierdo y derecho
+        # Calcular el padding
         total_padding = size - 2 - line_length
         padding = total_padding // 2
         
@@ -140,7 +141,7 @@ Main code.
 """
 
 def main():
-    pass
+    print(IU("Hela"))
 
 if __name__ == "__main__":
     main()
