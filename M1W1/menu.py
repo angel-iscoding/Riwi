@@ -1,5 +1,3 @@
-
-
 def menu (msj: str):
     chars = [" ", "⎢", "⎥", "∙", "⎯"]
     
