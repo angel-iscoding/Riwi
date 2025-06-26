@@ -307,7 +307,7 @@ def invetory_price_with_discount() -> float:
         for clave, valor in client.items():
             if clave == "products_sold":
                 for item in valor:
-                    total_sum += item["price"] * (1 -(item["discount"][1] / 100)) * item["quantity"]
+                    total_sum += item["price"] * (1 -(item["discount"] / 100)) * item["quantity"]
 
     return total_sum
 
