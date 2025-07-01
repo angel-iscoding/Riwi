@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+}
+
+body {
+    font-family: "Kulim Park", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #0F0F0F;
+    color: azure;
+}
+
+/* Global classes */
+
+.container-flex{
+    display: flex;  
+    padding: 0px 50px;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.container-main{
+    justify-content: space-around;
+    padding: 100px 0px;
+}
+
+.spaceb {
+    justify-content: space-between;
+}
+
+/* Main Structure ID's*/
+
+#header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header ul {
+    display: flex;
+    gap: 50px;
+}
+
+#header ul li{ 
+    list-style-type: none;
+}
+
+#header ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+#main {
+    width: 100%;
+}
+
+/* Inside of the main by sections */
