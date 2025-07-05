@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel-iscoding - Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Navbar -->
+        <header class="header">
+            <div class="logo"><h1>angel-iscoding</h1></div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-right">
+                <div class="social-links">
+                    <a href="www.linkedin.com/in/luisangel-avila-afanador-648b57336" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    </a>
+                    <a href="https://github.com/angel-iscoding" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="mobile-nav" id="mobileNav">
+                <div class="mobile-nav-content">
+                    <a href="#about" class="mobile-nav-link">About</a>
+                    <a href="#projects" class="mobile-nav-link">Projects</a>
+                    <a href="#experience" class="mobile-nav-link">Experience</a>
+                    <a href="#contact" class="mobile-nav-link">Contact</a>
+                    <div class="mobile-social-links">
+                        <a href="www.linkedin.com/in/luisangel-avila-afanador-648b57336" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        </a>
+                        <a href="https://github.com/angel-iscoding" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Profile Section -->
+        <section class="profile-section" id="about">
+            <img src="./src/998e15eb-bbdb-4a70-83a1-001425c2f184.jpeg" alt="Angel's profile picture" width="200" class="profile-image">
+            <div class="profile-content">
+                
+                <p>I'm <strong>Angel Afanador</strong>, a fullstack web developer from Colombia with +2 years of experience. <br> I'm 
+                    passionate about databases, back-end, and building open-source software.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="section-header">
+                <h2>Projects</h2>
+                <a href="#" class="more-link">
+                    More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">
+                            <div class="project-icon">🍞</div>
+                            <span class="project-name">toast</span>
+                            <span class="project-status">updated</span>
+                        </div>
+                        <a href="#" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">🍞 A beautiful notification library for React.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">
+                            <i class="fab fa-react"></i> Turborepo
+                        </span>
+                        <span class="tech-tag">
+                            <i class="fab fa-js"></i> Next.js
+                        </span>
+                        <span class="tech-tag">
+                            <i class="fab fa-css3"></i> Tailwind CSS
+                        </span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">
+                            <div class="project-icon">🎨</div>
+                            <span class="project-name">svgl</span>
+                            <span class="project-status">✨</span>
+                        </div>
+                        <a href="#" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">🎨 A beautiful library with SVG logos.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Svelte</span>
+                        <span class="tech-tag">Hono</span>
+                        <span class="tech-tag">Upstash</span>
+                        <span class="tech-tag">shadcn/ui</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">
+                            <div class="project-icon">⚛️</div>
+                            <span class="project-name">react-symbols</span>
+                            <span class="project-status">✨</span>
+                        </div>
+                        <a href="#" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">⚛️ Symbols icons for React.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Turborepo</span>
+                        <span class="tech-tag">Remix</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">
+                            <div class="project-icon">🔗</div>
+                            <span class="project-name">slug</span>
+                            <span class="project-status">✨</span>
+                        </div>
+                        <a href="#" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">🔗 An open-source URL shortener.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">T3 Stack</span>
+                        <span class="tech-tag">Prisma</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience-section" id="experience">
+            <div class="section-header">
+                <h2>Experience</h2>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-timeline">
+                    <div class="timeline-dot"></div>
+                    
+                </div>
+                <div class="experience-content">
+                    <p class="company-name">August 2024 - September 2024</p>
+                    <h3 class="job-title">Fullstack Developer</h3>
+                    <p class="company-name">Pah Venture</p>
+                    <p class="job-description">
+                       I developed an API in Express.js to automate the uploading of content 
+on Facebook and Instagram using the tools offered by Meta for developers
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="section-header">
+                <h2>Contact</h2>
+                <p style="color: #666; font-size: 14px; margin-top: 5px;">Let's work together on your next project</p>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+                
+                <div class="form-status" id="formStatus"></div>
+            </form>
+
+            <!-- Contact Info -->
+            <div class="contact-info-grid">
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>angel-iscoding@gmail.com</span>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Barranquilla, Colombia</span>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>github.com/angel-iscoding</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-tagline">
+                    <span>⭐</span>
+                    <span>Building amazing things</span>
+                </div>
+                <div>Luisangel Avila Afanador - 2025</div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
