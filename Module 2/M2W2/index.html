@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts and stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    
+    <title>User register.</title>
+</head>
+<body>
+    <main>
+        <section>
+            <!-- Logo and title -->
+            <div id="logo">
+                <img src="./src/Group 1.png" alt="Logo">
+                <h1>Angel.iscoding</h1>
+            </div>
+
+            <p><strong>Nice to see you again</strong></p>
+
+            <!-- Registration form -->
+            <form action="">
+                <!-- this is just to simulate a sign up tab-->
+                <label for="email">Register</label>
+                <input type="email" id="email" name="email" placeholder="Enter new email">
+                
+                <!-- this is just to simulate a sign up tab-->
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter new password">
+
+                <!-- Datebrith to comprobe if you are 18 -->
+                <label for="date">Datebirth</label>
+                <input type="date" id="date" name="date">
+
+                <!-- Submit button -->
+                <button type="submit" id="submit">Register</button>
+            </form>
+
+            <!-- Sign in link (Not works) -->
+            <p id="sign">You have a user? Sign in <a href="#">here</a></p>
+
+            <!-- Div where confirm the verification -->
+            <div id="verification"></div>
+        </section>
+    </main>
+    <!-- Setting the JS -->
+    <script src="./script.js"></script>
+</body>
+</html>
