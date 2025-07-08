@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+}
+
+body {
+    font-family: "Kulim Park", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #0F0F0F;
+    color: azure;
+    overflow: hidden;
+}
+
+/* Global classes */
+
+.container-row{
+    display: flex;
+}
+
+.container-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.visible-container {
+    border-radius: 20px;
+    background-color: #202020;
+}
+
+.all-space {
+    width: 100%;
+    gap: 100px;
+}
+
+.spacea{
+    justify-content: center;
+}
+
+/* Main Structure ID's*/
+
+#first-section {
+    width: 100%;
+}
+
+#presentation {
+    justify-content: space-evenly;
+}
+
+#presentation img {
+    width: 300px;
+    max-width: 300px;
+    height: auto;
+    border-radius: 25px 0px 25px 0px;
+}
+
+#presentation article {
+    text-align: start;
+    justify-content: center;
+}
+
+#presentation p {
+    font-size: 14px;
+    color: #969696;
+}
+
+#presentation h2 {
+    font-size: 40px;
+}
+
+#presentation p, h2 {
+    margin: 4px;
+}
+
+#slider {
+    text-align: center;
+    width: 788px;
+    height: 73px;
+    font-size: 20px;
+}
+
+#container-aboutme {
+    justify-content: space-between;
+    align-items: center;
+}
+
+#credentials {
+    width: 440px;
+    height: 225px;
+}
+
+#projects {
+    width: 300px;
+    height: 225px;
+}
+
+#second-section {
+    width: 100%;
+}
+
+#blog {
+    width: 330px;
+    height: 250px;
+}
+
+#specialization {
+    width: 600px;
+    height: 250px;
+}
+
+#profiles {
+    width: 300px;
+    height: 250px;
+}
+
+#third-section {
+    width: 100%;
+}
+
+#my-projects {
+    width: 671px;
+    height: 270px;
+}
+
+#contact {
+    width: 630px;
+    height: 270px;
+}
+
+/* Semantic styles */
+
+header {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+}
+
+header ul {
+    gap: 30px;
+}
+
+header li {
+     list-style-type: none;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    gap: 20px 0px;
+    width: 100%;
+}
+
+
+

@@ -2,6 +2,10 @@
 
 ![Portfolio Screenshot](./998e15eb-bbdb-4a70-83a1-001425c2f184.jpeg)
 
+Github Repository:
+
+https://github.com/angel-iscoding/Riwi/tree/main/Module%202/M2W1/Version2
+
 A responsive portfolio website showcasing the work and experience of Angel Afanador, a fullstack web developer from Colombia.
 
 ## Features
