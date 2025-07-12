@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts and stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    
+    <title>User register.</title>
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #737373;
+            font-family: "Geist", sans-serif;
+        }
+
+        main {
+            display: flex;
+            background-color: #ffffff;
+            width: 1200px;
+            height: 750px;
+            border-radius: 30px;
+        } 
+
+        aside {
+            width: 100%;
+            background-image: url("./src/RIWI.2023.10_0262.jpg");
+            background-size: cover;
+            background-position: -100px;
+            border-radius: 30px 0px 0px 30px;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            padding: 50px;
+        }
+
+        #logo{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        #logo h1 {
+            font-size: 20px;
+        }
+
+        #logo img {
+            width: 50px;
+        }
+
+        #eslogan {
+            padding-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form label {
+            font-size: 10px;
+            margin-left: 20px;
+        }
+
+        form input {
+            background-color: #F2F2F2;
+            border: none;
+            height: 2.5rem;
+            border-radius: 5px;
+            padding: 0rem 1rem;
+        }
+
+        form button {
+            border: none;
+            height: 2.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        #submit {
+            background-color: #007AFF;
+            color: #ffffff;
+        }
+
+        #google {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        /* Dentro del <style> */
+        .google-btn::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            background-image: url('./src/google-icon.png'); /* Cambia por tu icono */
+            background-size: cover;
+            background-position: center;
+        }
+
+        button#submit:hover {
+            background: #388e3c;
+        }
+
+        #sign {
+            font-size: 14px;
+            align-self: center;
+        }
+
+        #sing a {
+            color: #077EFF;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <aside id="background-section">
+
+        </aside>
+        <section>
+            <!-- Logo and title -->
+            <div id="logo">
+                <img src="./src/favicon.webp" alt="Logo">
+                <h1>Riwi</h1>
+            </div>
+
+            <p id="eslogan"><strong>Nice to see you again</strong></p>
+
+            <!-- Registration form -->
+            <form action="">
+                <!-- this is just to simulate a sign up tab-->
+                <label for="email">Login</label>
+                <input type="email" id="email" name="email" placeholder="Enter new email">
+                
+                <!-- this is just to simulate a sign up tab-->
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+
+                <!-- Submit button -->
+                <button type="submit" id="submit">Login</button>
+
+                <!-- Google button -->
+                <button type="submit" id="google" class="google-btn">Or sign with Google</button>
+            </form>
+
+            <!-- Sign in link (Not works) -->
+            <p id="sign">You don't have a user? Sign up <a href="#">here</a></p>
+        </section>
+    </main>
+
+    <!-- ...existing code... -->
+    <script src="./database.js"></script>
+    <script>
+        document.querySelector('#sign a').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'register.html';
+        });
+
+        document.querySelector('form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            await loginUser(email, password);
+        });
+    </script>
+    </body>
+    </html>
+
+</body>
+</html>
