@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos fijos dentro de un div</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Contenedor principal con scroll */
+        .contenedor-principal {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* Div que actuará como viewport relativo */
+        .contenedor-relativo {
+            position: relative;
+            width: 100%;
+            height: 800px; /* Altura fija para demostración */
+            overflow: auto;
+            border: 2px dashed #ccc;
+            background-color: #222;
+        }
+
+        /* Tus elementos adaptados */
+        .div1 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 100;
+        }
+
+        .div2 {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 0, 0, 0.7);
+            position: absolute;
+            left: 500px;
+            top: 50px;
+        }
+
+        /* Contenido para generar scroll dentro del contenedor */
+        .contenido-interior {
+            height: 2000px;
+            padding: 20px;
+            color: white;
+        }
+
+        .seccion {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-principal">
+        <h1>Elementos fijos dentro de un div contenedor</h1>
+        <p>Los elementos azul y rojo están posicionados relativamente al div gris, no a la ventana.</p>
+        
+        <div class="contenedor-relativo">
+            <!-- Tus elementos posicionados relativamente a este contenedor -->
+            <div class="div1">
+                Contenedor centrado (relativo al div padre)
+                <div class="div2"></div>
+            </div>
+            
+            <!-- Contenido para generar scroll dentro del contenedor -->
+            <div class="contenido-interior">
+                <div class="seccion">
+                    <h2>Contenido de ejemplo</h2>
+                    <p>Este contenido hace que el div padre tenga scroll.</p>
+                    <p>Los elementos azul y rojo mantienen su posición relativa al contenedor gris.</p>
+                </div>
+                
+                <div class="seccion">
+                    <h2>Más contenido</h2>
+                    <p>Desplázate hacia abajo para ver el comportamiento.</p>
+                    <p>Los elementos posicionados se mueven con el scroll del contenedor, no con el de la página.</p>
+                </div>
+                
+                <div class="seccion">
+                    <h2>Continuación</h2>
+                    <p>Más contenido para generar scroll interno...</p>
+                </div>
+                
+                <!-- Más contenido para hacer scroll -->
+                <div style="height: 1000px;"></div>
+            </div>
+        </div>
+        
+        <div style="padding: 20px;">
+            <h2>Explicación</h2>
+            <p>El truco está en que el div <code>.contenedor-relativo</code> tiene:</p>
+            <ul>
+                <li><code>position: relative</code> (crea un nuevo contexto de posicionamiento)</li>
+                <li><code>overflow: auto</code> (permite scroll interno)</li>
+                <li>Altura fija (en este ejemplo 800px)</li>
+            </ul>
+            <p>Tus elementos <code>.div1</code> y <code>.div2</code> se posicionan relativamente a este contenedor.</p>
+        </div>
+    </div>
+</body>
+</html>

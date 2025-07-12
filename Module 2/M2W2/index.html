@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section>
+            <!-- Animated gradient backgrounds -->
+            <div class="center-reference">
+                <div class="background-div" id="container1"></div>
+                <div class="background-div" id="container2"></div>
+                <div class="background-div" id="container3"></div>
+                <div class="background-div" id="container4"></div> 
+                <div class="background-div" id="container5"></div> 
+                <div class="background-div" id="container6"></div>
+                <div class="background-div" id="container7"></div>
+            </div>
+
+            <!-- Main login card -->
+            <div class="fill">
+                <!-- Logo and title -->
+                <div>
+                    <div id="logo">
+                        <img src="./src/icon.png" alt="Logo">
+                        <h1>Bookstore Ecommerce</h1>
+                    </div>
+                
+                    <p><strong>Nice to see you again</strong></p>
+                </div>
+
+                <!-- Registration form -->
+                <form action="">
+                    <!-- this is just to simulate a sign up tab-->
+                    <label for="email">Login</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                    
+                    <!-- this is just to simulate a sign up tab-->
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+
+                    <!-- Submit button -->
+                    <button type="submit" id="submit">Login</button>
+                </form>
+
+                <!-- Sign in link (Not works) -->
+                <p id="sign">You have a user? Sign in <a href="#">here</a></p>
+            </div>
+        </section>        
+    </main>
+    <script>
+        // Prevents page reload and animation reset on form submit
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+        });
+    </script>
+</body>
+</html>
