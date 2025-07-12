@@ -1,8 +1,8 @@
-# Bookstore Ecommerce Login Page
+# Training Module #2 Week #2
 
 ## Overview
 
-This project is a demonstration of a modern login page for a bookstore ecommerce platform.  
+This project is a demonstration of a modern login page for a bookstore ecommerce platform for the training of Riwi module #2 week #2.  
 It features animated gradient backgrounds, a clean card-style login form, and responsive design using only HTML and CSS.
 
 ## Structure
