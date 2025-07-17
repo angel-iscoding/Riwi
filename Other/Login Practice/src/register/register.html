@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts and stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Css -->
+    <link rel="stylesheet" href="./register.css">
+
+    <title>User register.</title>
+</head>
+<body>
+    <main>
+        <section>
+            <!-- Logo and title -->
+            <div id="logo">
+                <img src="../../public/favicon.webp" alt="Logo">
+                <h1>Riwi</h1>
+            </div>
+
+            <p><strong>Create a new account</strong></p>
+
+            <!-- Registration form -->
+            <form action="">
+                <!-- this is just to simulate a sign up tab-->
+                <label for="email">Register</label>
+                <input type="email" id="email" name="email" placeholder="Enter new email">
+                
+                <!-- this is just to simulate a sign up tab-->
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter new password">
+
+                <!-- this is just to simulate a sign up tab-->
+                <label for="confirm-password">Confirm password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password">
+
+                <!-- Submit button -->
+                <button type="submit" id="submit">Register</button>
+            </form>
+
+            <!-- Sign in link (Not works) -->
+            <p id="sign">You have a user? Sign in <a href="../login/login.html">here</a></p>
+        </section>
+        <aside>
+        </aside>
+    </main>    
+    <script type="module" src="./register.js"></script>
+</body>
+</html>
