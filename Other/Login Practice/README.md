@@ -4,7 +4,7 @@
 
 Como desarrollador Frontend, se me ha asignado la tarea de implementar las páginas de **Login** y **Registro** para el proyecto Riwi, siguiendo el diseño proporcionado en Figma:
 
-[Figma - Riwi Login/Register UI](https://www.figma.com/community/file/1524913326119060459)
+[Figma - Riwi Login/Register UI](https://www.figma.com/design/lTlTgdLOqovSnhUE3TNKQh/Riwi-Studing?node-id=0-1&t=uYUh0rlcsftqLNrn-1)
 
 El diseño incluye todos los assets, guías de estilo, fuentes y colores necesarios para la correcta implementación visual y de experiencia de usuario.
 
