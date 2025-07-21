@@ -1,0 +1,34 @@
+{
+  "to-do": [
+    {
+      "id": "1",
+      "title": "Aprender JavaScript",
+      "completed": true
+    },
+    {
+      "id": "2",
+      "title": "Hacer la tarea",
+      "completed": true
+    },
+    {
+      "id": "aa81",
+      "title": "Hola tarea",
+      "completed": true
+    },
+    {
+      "id": "795d",
+      "title": "Hola cosita",
+      "completed": true
+    },
+    {
+      "id": "b053",
+      "title": "hola mi nombre es angel",
+      "completed": false
+    },
+    {
+      "id": "f310",
+      "title": "Este elemento es nuevo",
+      "completed": false
+    }
+  ]
+}

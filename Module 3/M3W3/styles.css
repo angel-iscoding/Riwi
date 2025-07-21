@@ -1,0 +1,111 @@
+body {
+    background: linear-gradient(90deg, #D93FC7, #6B5CFF, rgb(23, 39, 87));
+    background-size: 300% 300%;
+    animation: gradientAnimation 30s ease infinite ;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+}
+
+h1 {
+    text-align: center;
+    color: #6B5CFF;
+    margin-bottom: 24px;
+}
+
+#todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+#todo-title {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+#add-btn {
+    background: #6B5CFF;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#add-btn:hover {
+    background: #4b3cc4;
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f1f2f6;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    transition: background 0.2s;
+}
+
+.todo-title {
+    flex: 1;
+    font-size: 1rem;
+    color: #333;
+    word-break: break-word;
+}
+
+.todo-item.completed .todo-title {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.todo-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.todo-actions button {
+    background: #e1e1e1;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.todo-actions .edit-btn { background: #ffd43b; }
+.todo-actions .edit-btn:hover { background: #ffe066; }
+
+.todo-actions .delete-btn { background: #ff6b6b; color: #fff; }
+.todo-actions .delete-btn:hover { background: #fa5252; }
+
+.todo-actions .complete-btn { background: #51cf66; color: #fff; }
+.todo-actions .complete-btn:hover { background: #40c057; }
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
