@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <main>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Events</h2>
+            <div class="profile">
+                <div class="profile-info">
+                    <div class="profile-name">Random guy</div>
+                    <div class="profile-role">Admin</div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="events-btn"><span class="sidebar-icon">&#128230;</span>Events</button>
+            </nav>
+            <button class="logout-btn" id="Signout">Logout <span class="sidebar-icon">&#128257;</span></button>
+        </aside>
+
+        <!-- Main Content -->
+        <section class="dashboard-content">
+            <div class="dashboard-header">
+                <h1>Events</h1>
+                <button class="add-event-btn">ADD NEW EVENT</button>
+            </div>
+            <div class="events-list">
+                <div class="events-header-row">
+                    <div class="events-header-cell"></div>
+                    <div class="events-header-cell">Name</div>
+                    <div class="events-header-cell">Description</div>
+                    <div class="events-header-cell">capacity</div>
+                    <div class="events-header-cell">Date</div>
+                    <div class="events-header-cell"></div>
+                </div>
+                <!-- Aquí se renderizarán dinámicamente los eventos -->
+                <div id="events-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="./dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "nickname": "nickname",
+      "email": "Email@gmail",
+      "password": "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a",
+      "isAdmin": true
+    },
+    {
+      "nickname": "nickname2",
+      "email": "Email@gmail2",
+      "password": "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a",
+      "isAdmin": false 
+    }
+  ],
+  "events": [
+    {
+      "title": "title",
+      "date": "date",
+      "hour": "hour",
+      "description": "description"
+    },
+    {
+      "title": "title2",
+      "date": "date",
+      "hour": "hour",
+      "description": "description"
+    }
+  ]
+}
