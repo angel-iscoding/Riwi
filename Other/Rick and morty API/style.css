@@ -1,0 +1,63 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Geist', sans-serif;
+    margin: 0;
+}
+
+main {
+    width: 100%;
+    height: 1000px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    position: absolute;
+    top: 20%;
+    font-size: 30px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #8EC55F, #328942); /* Degradado */
+    background-clip: unset;
+    -webkit-background-clip: text; /* Clip del fondo al texto */
+    -webkit-text-fill-color: transparent;
+}
+
+.page-background {
+    display: flex;
+    justify-content: center;    
+    width: 100%;
+    position: absolute;    
+}
+
+.card {
+    background-color: aliceblue;
+    display: flex;
+    width: 100px;
+    height: 300px;
+}
+
+.card aside {
+    width: 50%;
+    height: 100%;
+}
+
+.card
+
+#data {
+    width: 100%;
+    height: 100%;
+    background-color: #1c2833;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#background {
+    fill: rgb(245, 245, 245);
+}
