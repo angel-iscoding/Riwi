@@ -1,5 +1,5 @@
 // URL base de JSON Server
-const LOCAL_URL = 'http://localhost:3000/users';
+const LOCAL_URL = 'http://localhost:3000/';
 
 // Función para iniciar sesión con JSON Server
 export async function loginUserLocal(email, password) {

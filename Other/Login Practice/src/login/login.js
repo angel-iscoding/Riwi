@@ -1,4 +1,5 @@
 import { loginUser } from "../script.supabase.js";
+import { loginUserLocal } from "../script.local.js";
 
 document.querySelector('form').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -6,5 +7,5 @@ document.querySelector('form').addEventListener('submit', async function(e) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    await loginUser(email, password);
+    await loginUserLocal(email, password);
 });
