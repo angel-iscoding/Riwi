@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>FinanzasPRO</h1>
+        <ul>
+            <li>
+                <a href="./dashboard.html">Balance</a>
+            </li>
+            <li>
+                <a href="./categories.html">Categories</a>
+            </li>
+            <li>
+                <a href="./reports.html">Reports</a>
+            </li>
+            <li>
+                <a id="sign-out">Sign out</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <aside>
+            <section id="balance">
+                <div><h3>Balance</h3></div>
+                <div><h4>Earnings</h4><p id="earnings-p">+$0</p></div>
+                <div><h4>Bills</h4><p id="bills-p">-$0</p></div>
+                <div><h4>Total</h4><p id="total-p">$0</p></div>
+            </section>
+
+            <section id="filters">
+                <div><h3>Filters</h3><a>Hide filters</a></div>
+                <form>
+                    <label for="type">Type</label>
+                    <select name="type" id="type">
+                        <option value="all">All</option>
+                        <option value="spent">Spent</option>
+                        <option value="revenue">Revenue</option>
+                    </select>
+                    <label for="category">Category</label>
+                    <select name="category" id="category">
+                        <option value="all">All</option>
+                    </select>
+                    <label for="date">Since</label>
+                        <input type="date" id="date" name="date">
+                    <label for="sort">Sort by</label>
+                    <select name="sort" id="sort">
+                        <option value="mostrecent">Most recent</option>
+                        <option value="lessrecent">Less recent</option>
+                        <option value="greateramount">Greater amount</option>
+                        <option value="eastamount">Least amount</option>
+                        <option value="az">A/Z</option>
+                        <option value="za">Z/A</option>    
+                    </select>
+                </form>
+            </section>
+        </aside>
+
+        <section id="operations">
+            <div><h3>Operations</h3> <button id="operationBtn">+ New operation</button></div>
+            <div> 
+                <h4>Description</h4>
+                <h4>Category</h4>
+                <h4>Date</h4>
+                <h4>Mount</h4>
+                <h4>Actions</h4>
+            </div>
+            <div id="elements">
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="../scripts/pages/dashboard.js"></script>
+</body>
+</html>

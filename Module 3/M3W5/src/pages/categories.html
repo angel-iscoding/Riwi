@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./categories.css">
+    <title>Categories</title>
+</head>
+<body>
+    <header>
+        <h1>FinanzasPRO</h1>
+        <ul>
+            <li>
+                <a href="./dashboard.html">Balance</a>
+            </li>
+            <li>
+                <a href="./categories.html">Categories</a>
+            </li>
+            <li>
+                <a href="./reports.html">Reports</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <h1>Categories</h1>
+        <form>
+            <label for="name">Name</label>
+            <div>
+                <input type="text" id="name" name="name" required>
+                <button type="submit">Add</button>
+            </div>
+        </form>
+
+        <div id="categories">
+
+        </div>
+    </main>
+
+    <script type="module" src="../scripts/pages/categories.js"></script>
+</body>
+</html>

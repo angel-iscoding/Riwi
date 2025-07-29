@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "id": "c7ad",
+      "name": "Angel",
+      "email": "Angel@gmail.com",
+      "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
+    }
+  ],
+  "operations": [
+    {
+      "id": "f123",
+      "type": "spent",
+      "category": "Food",
+      "date": "1/1/2025",
+      "amount": 200,
+      "description": "Lorem ipsums",
+      "userId": "c7ad"
+    },
+    {
+      "id": "fdf2",
+      "type": "revenue",
+      "category": "Food",
+      "date": "1/1/2025",
+      "amount": 1000,
+      "description": "Lorem ipsums",
+      "userId": "c7ad"
+    },
+    {
+      "id": "74f7",
+      "description": "123123",
+      "amount": 123123,
+      "type": "spent",
+      "category": "Food",
+      "date": "2025-07-10",
+      "userId": "c7ad"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Food",
+      "id": "f0d4"
+    },
+    {
+      "name": "Services",
+      "id": "c577"
+    },
+    {
+      "name": "Education",
+      "id": "9a9d"
+    },
+    {
+      "name": "Get outs",
+      "id": "17d4"
+    },
+    {
+      "name": "Transport",
+      "id": "55f7"
+    },
+    {
+      "name": "Work",
+      "id": "5661"
+    },
+    {
+      "id": "9d63",
+      "name": "New category"
+    }
+  ]
+}
